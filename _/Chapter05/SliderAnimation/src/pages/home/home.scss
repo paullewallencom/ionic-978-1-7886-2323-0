@@ -1,0 +1,38 @@
+page-home {
+    .slides-float {
+        .slide-float {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            margin-top: 20px;
+            opacity: 0;
+        }
+    }
+    .home {
+        background-color: DarkSlateBlue;
+        h2 {
+            font-size: 3rem;
+        }
+        ion-slide {
+            color: white;
+            background-color: transparent;
+        }
+        .slides-float {
+            color: white;
+            text-align: center;
+            :first-child {
+                opacity: 1;
+            }
+        }
+        .slide-float {
+            ion-icon {
+                font-size: 150px;
+            }
+            h1 {
+                font-weight: lighter;
+                font-size: 60px;
+                margin-top: 0;
+            }
+        }
+    }
+}
