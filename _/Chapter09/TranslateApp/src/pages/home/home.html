@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Language
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    {{'Hello' | translate }}, {{ 'Good Morning' | translate }}
+  </ion-item>
+  <ion-item>
+    <ion-label>Language</ion-label>
+    <ion-select [(ngModel)]="language" (ionChange)="setLang()">
+      <ion-option value="en">English</ion-option>
+      <ion-option value="de">Deutsch</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

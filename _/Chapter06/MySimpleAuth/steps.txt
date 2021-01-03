@@ -1,0 +1,23 @@
+1. configure your app id in config.xml
+   io.ionic.imtest
+2. configure callback url, which is based on app id
+   YOUR_PACKAGE_ID://imtest.auth0.com/cordova/YOUR_PACKAGE_ID/callback
+   replace YOUR_PACKAGE_ID to your package id, example: io.ionic.imtest
+   
+   Inside Auth0 Dashboard
+
+3. Add file as Allowed origin for CORS
+   file://*
+
+4. Install Dependencies
+   npm install auth0-js @auth0/cordova --save
+
+5. Add Cordova Plugins
+   ionic cordova plugin add cordova-plugin-safariviewcontroller
+   
+   ionic cordova plugin add cordova-plugin-customurlscheme --variable URL_SCHEME={YOUR_PACKAGE_ID} --variable ANDROID_SCHEME={YOUR_PACKAGE_ID} --variable ANDROID_HOST=imtest.auth0.com --variable ANDROID_PATHPREFIX=/cordova/{YOUR_PACKAGE_ID}/callback
+
+6. Modify config.xml for auth0 redirection
+   <preference name="AndroidLaunchMode" value="singleTask" />
+
+7. 

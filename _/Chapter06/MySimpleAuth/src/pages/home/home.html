@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="!auth.isAuthenticated()">
+        <button ion-button block color="primary" (click)="auth.login()">Log In</button>
+    </div>
+
+    <!-- a card with the user's picture and name, plus a logout button -->
+    <div *ngIf="auth.isAuthenticated()">
+      <ion-card>
+        <img [src]="auth.user.picture" />
+        <ion-card-content>
+          <ion-card-title>{{ auth.user.name }}</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+      <button ion-button block color="primary" (click)="auth.logout()">Logout</button>
+    </div>
+</ion-content>

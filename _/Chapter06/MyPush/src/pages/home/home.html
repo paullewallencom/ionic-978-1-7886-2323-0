@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Push Notification
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <code class="center">{{ pushToken }}</code> -->
+  <h2 class="big-square" *ngIf="!this.messages.length">
+    You have no message
+  </h2>
+  <h3 class="sub-title" *ngIf="!!this.messages.length">
+    Your messages
+  </h3>
+  <ion-card *ngFor="let msg of messages">
+    <ion-card-header>
+      {{ msg.title }}
+    </ion-card-header>
+    <ion-card-content>
+      {{ msg.text }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
